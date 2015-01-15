@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		400466D31A664DBB00CAFE33 /* NothingFoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 400466D21A664DBB00CAFE33 /* NothingFoundCell.xib */; };
+		40440BAF1A676F27008198B4 /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40440BAE1A676F27008198B4 /* LoadingCell.xib */; };
 		406A42D41A65F26F00D8785F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406A42D31A65F26F00D8785F /* AppDelegate.swift */; };
 		406A42D91A65F26F00D8785F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 406A42D71A65F26F00D8785F /* Main.storyboard */; };
 		406A42DB1A65F26F00D8785F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 406A42DA1A65F26F00D8785F /* Images.xcassets */; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		400466D21A664DBB00CAFE33 /* NothingFoundCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NothingFoundCell.xib; sourceTree = "<group>"; };
+		40440BAE1A676F27008198B4 /* LoadingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
 		406A42CE1A65F26F00D8785F /* StoreSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoreSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		406A42D21A65F26F00D8785F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		406A42D31A65F26F00D8785F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				406A42F31A65F4BD00D8785F /* SearchViewController.swift */,
+				40440BAE1A676F27008198B4 /* LoadingCell.xib */,
 				400466D21A664DBB00CAFE33 /* NothingFoundCell.xib */,
 				406A42F91A663F0300D8785F /* SearchResultCell.swift */,
 				406A42D31A65F26F00D8785F /* AppDelegate.swift */,
@@ -206,6 +209,7 @@
 			files = (
 				406A42D91A65F26F00D8785F /* Main.storyboard in Resources */,
 				406A42DE1A65F26F00D8785F /* LaunchScreen.xib in Resources */,
+				40440BAF1A676F27008198B4 /* LoadingCell.xib in Resources */,
 				406A42F81A6639D100D8785F /* SearchResultCell.xib in Resources */,
 				400466D31A664DBB00CAFE33 /* NothingFoundCell.xib in Resources */,
 				406A42DB1A65F26F00D8785F /* Images.xcassets in Resources */,
