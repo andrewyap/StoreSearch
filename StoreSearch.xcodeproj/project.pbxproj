@@ -17,6 +17,7 @@
 		406A42F61A66342C00D8785F /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406A42F51A66342C00D8785F /* SearchResult.swift */; };
 		406A42F81A6639D100D8785F /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 406A42F71A6639D100D8785F /* SearchResultCell.xib */; };
 		406A42FA1A663F0300D8785F /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406A42F91A663F0300D8785F /* SearchResultCell.swift */; };
+		409095601A679B5900C522EE /* UIImageView+DownloadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4090955F1A679B5900C522EE /* UIImageView+DownloadImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		406A42F51A66342C00D8785F /* SearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		406A42F71A6639D100D8785F /* SearchResultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
 		406A42F91A663F0300D8785F /* SearchResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
+		4090955F1A679B5900C522EE /* UIImageView+DownloadImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+DownloadImage.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				40440BAE1A676F27008198B4 /* LoadingCell.xib */,
 				400466D21A664DBB00CAFE33 /* NothingFoundCell.xib */,
 				406A42F91A663F0300D8785F /* SearchResultCell.swift */,
+				4090955F1A679B5900C522EE /* UIImageView+DownloadImage.swift */,
 				406A42D31A65F26F00D8785F /* AppDelegate.swift */,
 				406A42D71A65F26F00D8785F /* Main.storyboard */,
 				406A42F51A66342C00D8785F /* SearchResult.swift */,
@@ -230,6 +233,7 @@
 				406A42F61A66342C00D8785F /* SearchResult.swift in Sources */,
 				406A42FA1A663F0300D8785F /* SearchResultCell.swift in Sources */,
 				406A42D41A65F26F00D8785F /* AppDelegate.swift in Sources */,
+				409095601A679B5900C522EE /* UIImageView+DownloadImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
