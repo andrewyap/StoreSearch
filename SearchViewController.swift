@@ -27,10 +27,11 @@ class SearchViewController: UIViewController {
   
   @IBOutlet weak var searchBar: UISearchBar!
   @IBOutlet weak var tableView: UITableView!
+  @IBOutlet weak var segmentedControl: UISegmentedControl!
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    tableView.contentInset = UIEdgeInsets(top: 64, left: 0, bottom: 0, right: 0)
+    tableView.contentInset = UIEdgeInsets(top: 108, left: 0, bottom: 0, right: 0)
     tableView.rowHeight = 80
     searchBar.becomeFirstResponder()
 
@@ -52,9 +53,18 @@ class SearchViewController: UIViewController {
   
   
   // MARK: - Format Apple API Request
-  func urlWithSearchText(searchText: String) -> NSURL {
+  func urlWithSearchText(searchText: String, category: Int) -> NSURL {
+    var entityName: String
+    
+    switch category {
+      case 1: entityName = "musicTrack"
+      case 2: entityName = "software"
+      case 3: entityName = "ebook"
+      default: entityName = ""
+    }
+    
     let escapedSearchText = searchText.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
-    let urlString = String(format: "http://itunes.apple.com/search?term=%@&limit=200", escapedSearchText)
+    let urlString = String(format: "http://itunes.apple.com/search?term=%@&limit=200&entity=%@", escapedSearchText, entityName)
     let url = NSURL(string: urlString)
     return url!
   }
@@ -162,8 +172,8 @@ class SearchViewController: UIViewController {
     searchResult.name = dictionary["trackName"] as NSString
     searchResult.artistName = dictionary["artistName"] as NSString
     searchResult.artworkURL60 = dictionary["artworkUrl60"] as NSString
-    searchResult.artworkURL100 = dictionary["artworkURL100"] as NSString
-    searchResult.storeURL = dictionary["trackViewIUrl"] as NSString
+    searchResult.artworkURL100 = dictionary["artworkUrl100"] as NSString
+    searchResult.storeURL = dictionary["trackViewUrl"] as NSString
     searchResult.kind = dictionary["kind"] as NSString
     searchResult.currency = dictionary["currency"] as NSString
     
@@ -233,12 +243,25 @@ class SearchViewController: UIViewController {
   
   // MARK: - Navigation
 
+  // MARK: - Actions
+  
+  @IBAction func segmentChanged(sender: UISegmentedControl) {
+    println("Segment changed: '\(sender.selectedSegmentIndex)'")
+    performSearch()
+  }
+  
 }
 
 
+
+// MARK: -- EXTENSIONS!
 // MARK: - Search Bar Delegate
 extension SearchViewController: UISearchBarDelegate {
   func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+    performSearch()
+  }
+  
+  func performSearch() {
     if !searchBar.text.isEmpty {
       searchBar.resignFirstResponder()
       
@@ -249,7 +272,7 @@ extension SearchViewController: UISearchBarDelegate {
       hasSearched = true
       searchResults = [SearchResult]()
       
-      let url = self.urlWithSearchText(searchBar.text)
+      let url = self.urlWithSearchText(searchBar.text, category: segmentedControl.selectedSegmentIndex)
       let session = NSURLSession.sharedSession()
       dataTask = session.dataTaskWithURL(url, completionHandler: {
         data, response, error in
