@@ -14,6 +14,7 @@ class SearchViewController: UIViewController {
   var searchResults = [SearchResult]()
   var hasSearched = false // var to know if user has ever performed a search
   var isLoading = false // var to know if app is retrieving data from Apple servers
+  var dataTask: NSURLSessionDataTask?
   
   // MARK: - Constants
   struct TableViewCellIdentifiers {
@@ -241,7 +242,7 @@ extension SearchViewController: UISearchBarDelegate {
     if !searchBar.text.isEmpty {
       searchBar.resignFirstResponder()
       
-      
+      dataTask?.cancel()
       isLoading = true
       tableView.reloadData()
       
@@ -250,13 +251,14 @@ extension SearchViewController: UISearchBarDelegate {
       
       let url = self.urlWithSearchText(searchBar.text)
       let session = NSURLSession.sharedSession()
-      let dataTask = session.dataTaskWithURL(url, completionHandler: {
+      dataTask = session.dataTaskWithURL(url, completionHandler: {
         data, response, error in
         
         println("On the main thread? " + (NSThread.currentThread().isMainThread ? "Yes" : "No"))
         
         if let error = error {
           println("Failure ! \(error)")
+          if error.code == -999 { return }
         } else if let httpResponse = response as? NSHTTPURLResponse {
           if httpResponse.statusCode == 200 {
             if let dictionary = self.parseJSON(data) {
@@ -281,7 +283,7 @@ extension SearchViewController: UISearchBarDelegate {
         }
       })
       
-      dataTask.resume()
+      dataTask?.resume()
     }
   }
   
