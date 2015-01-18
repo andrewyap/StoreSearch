@@ -18,6 +18,8 @@
 		406A42F81A6639D100D8785F /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 406A42F71A6639D100D8785F /* SearchResultCell.xib */; };
 		406A42FA1A663F0300D8785F /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406A42F91A663F0300D8785F /* SearchResultCell.swift */; };
 		409095601A679B5900C522EE /* UIImageView+DownloadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4090955F1A679B5900C522EE /* UIImageView+DownloadImage.swift */; };
+		40FC27B81A6B410100E0C307 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FC27B71A6B410100E0C307 /* DetailViewController.swift */; };
+		40FC27BA1A6B430F00E0C307 /* DimmingPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FC27B91A6B430F00E0C307 /* DimmingPresentationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		406A42F71A6639D100D8785F /* SearchResultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
 		406A42F91A663F0300D8785F /* SearchResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		4090955F1A679B5900C522EE /* UIImageView+DownloadImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+DownloadImage.swift"; sourceTree = "<group>"; };
+		40FC27B71A6B410100E0C307 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		40FC27B91A6B430F00E0C307 /* DimmingPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DimmingPresentationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,9 +92,11 @@
 			isa = PBXGroup;
 			children = (
 				406A42F31A65F4BD00D8785F /* SearchViewController.swift */,
+				40FC27B91A6B430F00E0C307 /* DimmingPresentationController.swift */,
 				40440BAE1A676F27008198B4 /* LoadingCell.xib */,
 				400466D21A664DBB00CAFE33 /* NothingFoundCell.xib */,
 				406A42F91A663F0300D8785F /* SearchResultCell.swift */,
+				40FC27B71A6B410100E0C307 /* DetailViewController.swift */,
 				4090955F1A679B5900C522EE /* UIImageView+DownloadImage.swift */,
 				406A42D31A65F26F00D8785F /* AppDelegate.swift */,
 				406A42D71A65F26F00D8785F /* Main.storyboard */,
@@ -230,8 +236,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				406A42F41A65F4BD00D8785F /* SearchViewController.swift in Sources */,
+				40FC27BA1A6B430F00E0C307 /* DimmingPresentationController.swift in Sources */,
 				406A42F61A66342C00D8785F /* SearchResult.swift in Sources */,
 				406A42FA1A663F0300D8785F /* SearchResultCell.swift in Sources */,
+				40FC27B81A6B410100E0C307 /* DetailViewController.swift in Sources */,
 				406A42D41A65F26F00D8785F /* AppDelegate.swift in Sources */,
 				409095601A679B5900C522EE /* UIImageView+DownloadImage.swift in Sources */,
 			);

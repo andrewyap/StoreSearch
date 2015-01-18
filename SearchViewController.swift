@@ -224,7 +224,15 @@ class SearchViewController: UIViewController {
   }
   
   // MARK: - Navigation
-
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    if segue.identifier == "ShowDetail" {
+      let controller = segue.destinationViewController as DetailViewController
+      let indexPath = sender as NSIndexPath
+      controller.searchResult = searchResults[indexPath.row]
+    }
+  }
+  
+  
   // MARK: - Actions
   
   @IBAction func segmentChanged(sender: UISegmentedControl) {
@@ -336,6 +344,7 @@ extension SearchViewController: UITableViewDataSource {
 extension SearchViewController: UITableViewDelegate {
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    performSegueWithIdentifier("ShowDetail", sender: indexPath)
   }
   
   func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
